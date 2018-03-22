@@ -3,10 +3,16 @@
 namespace AppBundle\Controller\API;
 
 use FOS\RestBundle\Controller\FOSRestController;
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 class ProductController extends FOSRestController
 {
     /**
+     * @ApiDoc(
+     *     section="Product",
+     *     description="Get all products"
+     * )
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function indexAction()
