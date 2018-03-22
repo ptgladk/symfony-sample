@@ -1,0 +1,4 @@
+api_product_index:
+    path: /api/products
+    defaults: { _controller: AppBundle:API/Product:index }
+    methods: [GET]
