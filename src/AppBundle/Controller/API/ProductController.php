@@ -2,17 +2,17 @@
 
 namespace AppBundle\Controller\API;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use FOS\RestBundle\Controller\FOSRestController;
 
-class ProductController extends Controller
+class ProductController extends FOSRestController
 {
     /**
-     * @return JsonResponse
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function indexAction()
     {
-        return new JsonResponse([], Response::HTTP_OK);
+        $products = $this->getDoctrine()->getRepository('AppBundle:Product')->findAll();
+        $view = $this->view($products, 200);
+        return $this->handleView($view);
     }
 }

@@ -1,0 +1,7 @@
+AppBundle\Entity\Product:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: false
+        name:
+            expose: true
