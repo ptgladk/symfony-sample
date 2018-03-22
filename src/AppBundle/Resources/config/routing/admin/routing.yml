@@ -1,0 +1,9 @@
+index:
+    path: /
+    defaults: { _controller: AppBundle:Admin/Default:index }
+    methods: [GET]
+
+admin_default:
+    path: /admin
+    defaults: { _controller: AppBundle:Admin/Default:default }
+    methods: [GET]
